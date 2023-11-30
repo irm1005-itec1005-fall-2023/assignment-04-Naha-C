@@ -7,50 +7,89 @@
 /*
  VARIABLES
 */
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
-
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-/*
-  PAGE / BODY
-*/
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+  background: rgb(254,208,187);
+  background: radial-gradient(circle, rgba(254,208,187,1) 89%, rgba(128,15,47,1) 100%);
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
 }
 
-main {
-  min-height: 100vh;
+header {
+  font-size: 1.5rem;
+}
 
+header, main {
+  min-height: 20vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+ main button {
+  color: #800f2f;
+  background: white ;
+  cursor: pointer;
+  transition: all o.3s ease;
+ }
 
-/****** Screen reader text utility clsas *******/
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+ main button:hover {
+  background: #800f2f;
+  color: #fed0bb;
+ }
+
+.container {
+  padding: 2em 2.5em;
+  background-color: white;
+  box-shadow: 0 1em 2em #800f2f;
 }
+
+#wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 1em;
+}
+
+#wrapper input{
+  width: 100%;
+  background-color: transparent;
+  font-size: 0.9em;
+  border: none;
+  border-bottom: 2px solid #800f2f;
+}
+
+#wrapper input:focus {
+  outline: none;
+  border-color: #800f2f;
+}
+
+main input, main button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: #800f2f;
+  background: white;
+} 
+
+#wrapper button {
+  position: relative;
+  border-radius: 0.5em;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+#error {
+  text-align: center;
+  background-color: white;
+  box-shadow: 0 1em 2em #800f2f;
+  margin-top: 1.5em;
+  padding: 1em;
+  display: none;
+}
+
+
