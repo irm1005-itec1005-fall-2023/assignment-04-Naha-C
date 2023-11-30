@@ -39,3 +39,5 @@ const task = <div class="task">
 
 tasksContainer.insertAdjacentHTML
 ("beforeend" , task);
+
+addToDo.addEventListener{"click" , addTask};
