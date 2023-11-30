@@ -36,3 +36,6 @@ const task = <div class="task">
   <i class="fa-solid fa-folder-minus"></i>
   </button>
 </div>
+
+tasksContainer.insertAdjacentHTML
+("beforeend" , task);
