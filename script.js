@@ -1,43 +1,38 @@
-/* Assignment 04: Finishing a Todo List App
- *
- * 
- *
- */
-
-
-//
-// Variables
-//
 
 // Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+const addToDo = document.querySelector("#addToDo");
+const newTaskInput = document.querySelector("#wrapper input");
+const tasksContainer = document.querySelector("#tasks");
+const error = document.getElementById ("error");
+const countValue = document.querySelector (".count-value")
+const displayCount = (taskCount) {
+  countValue.innerText = taskCount;
+};
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+//Variables
 
-//
+let taskCount = 0;
+
 // Functions
-//
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
+const addTask = () {
+  const taskName = newTaskInput.ariaValueMax.trim();
+  error.style.display = "none";
+  if (!taskName) {
+    setTimeout(() {
+      error.style.display = "block";
+    }, 200);
     return;
   }
-
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
-
-  // Init complete
-  console.log("App successfully initialised");
 }
 
-//
-// Inits & Event Listeners
-//
-inititialise();
+const task = <div class="task">
+  <input type="checkbox" class="task-check"></input>
+  <span class="taskname">${taskName}</span>
+  <button class="edit">
+  <i class="fa-solid fa-file-pen"></i>
+  </button>
+  <button class="delete">
+  <i class="fa-solid fa-folder-minus"></i>
+  </button>
+</div>
